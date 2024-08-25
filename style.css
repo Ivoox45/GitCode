@@ -3,33 +3,11 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
+    
 }
 html {
     scroll-behavior: smooth;
 }
-/* :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --text-color: #333333;
-    --background-color: #ffffff;
-    --padding-small: 8px;
-    --padding-large: 16px;
-}
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: var(--padding-large);
-}
-
-h1 {
-    color: var(--primary-color);
-}
-
-button {
-    background-color: var(--secondary-color);
-    padding: var(--padding-small);
-    color: var(--text-color);
-} */
 
 :root {
     --header-color: #23232e;
@@ -42,25 +20,17 @@ button {
     --link-hover-text: #1a1a2e;
 }
 
-/*:root {
-    --background-color: #1a1a2e;
-    --header-background: #23232e;
-    --primary-color: #ff7f50;
-    --primary-color-hover: #e96b35;
-    --text-color: #e0e0e0;
-    --link-hover-background: #ff7f50;
-    --link-hover-text: #1a1a2e;
-}*/
-
 body {
     background-color: var(--body-color);
 }
 /* header */
 header {
+    font-family: "Poppins", sans-serif;
     position: sticky;
     top: 0;
     height: 8vh;
     width: 100%;
+    z-index: 50;
     background: var(--header-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -75,6 +45,7 @@ h1{
 }
 
 h2 {
+    font-family: "Poppins", sans-serif;
     cursor: pointer;
     user-select: none;
 }
@@ -238,6 +209,7 @@ main {
     align-items: center;
     padding: 1rem;
     flex-wrap: wrap;
+    font-family: "Poppins", sans-serif;
 }
 
 .container--dibujo > div {
@@ -247,15 +219,14 @@ main {
     border-radius: 50%;
     text-align: center;
     align-content: center;
-    transition: 0.7s;
+    transition: transform 0.3s ease;
     -webkit-transition: 0.7s;
     -moz-transition: 0.7s;
     -ms-transition: 0.7s;
     -o-transition: 0.7s;
 }
 .container--dibujo > div:hover {
-    flex-basis: 14rem;
-    height: 14rem;
+    transform: translateY(-10px);
 }
 .container--dibujo > div:first-child {
     background-color: #38ade8;
@@ -281,22 +252,28 @@ article {
     padding: 1rem;
     border-radius: 10px;
     width: 90%;
-    gap: 1rem;
+    gap: 1.5rem;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
 section {
+    font-family: "Poppins", sans-serif;
     border-radius: 10px;
     padding: 1rem;
     background-color: var(--see-color);
     color: white;
     border: 2px solid #bab6b6;
+    transition: transform 0.3s ease;
+    
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+section:hover{
+    transform: translateY(-10px);
 }
 
 h3 {
