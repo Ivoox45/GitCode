@@ -13,7 +13,7 @@
     <body>
         <header>
             <div class="container--mobile">
-                <h2>GitCode</h2>
+                <h1>GitCode</h1>
                 <input type="checkbox" id="menu" />
                 <label for="menu">
                     <span class="material-symbols-outlined" for="menu"
@@ -26,13 +26,162 @@
                 <nav class="navbar-mobile">
                     <label for="menu" id="cerrar">
                         <span class="material-symbols-outlined">close</span>
-                        </label>
+                    </label>
 
                     <a href="#">Inicio</a>
                     <a href="#">Basico</a>
                     <a href="#">Intermedio</a>
                 </nav>
             </div>
+            <div class="container--desktop">
+                <h1>GitCode</h1>
+                <nav class="navbar--desktop">
+                    <a href="#">Inicio</a>
+                    <a href="#">Basico</a>
+                    <a href="#">Intermedio</a>
+                </nav>
+            </div>
         </header>
+        <main>
+            <h2>Como trabaja Git?</h2>
+            <div class="container--dibujo">
+                <div class="trabajo"><h3>WORKING</h3></div>
+                <div class="agregado"><h3>PREPARACION/STAGING</h3></div>
+
+                <div class="repositorio"><h3>COMMITED/REPOSITORIO</h3></div>
+            </div>
+            <h2>Basico de Git</h2>
+            <article>
+                <section>
+                    <h3>Iniciar un proyecto</h3>
+                    <p>
+                        Para poder inicializar un proyecto con Git instalado
+                        simplemente debes de colocar el siguiente comando
+                    </p>
+                    <pre><code>git init</code></pre>
+                    <p>
+                        recuerda que debes de estar en el directorio donde haras
+                        tu proyecto
+                    </p>
+                </section>
+
+                <section>
+                    <h3>
+                        Agregar archivos a <b id="preparacion"> preparacion</b>
+                    </h3>
+                    <p>
+                        Pasar uno o varios archivos de
+                        <b id="working">working</b> a
+                        <b id="preparacion">preparacion</b> con el siguiente
+                        comando
+                    </p>
+                    <pre><code> git add archivo.txt</code></pre>
+                    <p>
+                        si quieres que todos los archivos se suban de one,
+                        colocas un punto al final
+                    </p>
+                    <pre><code>git add .</code></pre>
+                </section>
+
+                <section>
+                    <h3>
+                        Ver archivos los cuales seran commiteados o no<b
+                            style="color: rgb(153, 153, 242)"
+                        >
+                            STATUS</b
+                        >
+                    </h3>
+                    <p>
+                        Visualizar cuando vamos a hacer un commit es importante,
+                        y debemos saber que cosas tanto del
+                        <b id="working">working</b> como del
+                        <b id="preparacion">preparacion</b> van a ser comiteadas
+                        o no
+                    </p>
+                    <pre><code> git status </code></pre>
+                </section>
+
+                <section>
+                    <h3>
+                        <b id="eliminar">Quitar </b>archivos de
+                        <b id="preparacion"> preparacion</b>
+                    </h3>
+                    <p>
+                        eliminar uno o varios archivos de
+                        <b id="preparacion">preparacion</b>con el siguiente
+                        comando
+                    </p>
+                    <pre><code> git rm --cached archivo.txt</code></pre>
+                </section>
+
+                <section>
+                    <h3>
+                        Llevar de <b id="preparacion">preparacion</b> a<b
+                            id="commited"
+                        >
+                            commited</b
+                        >
+                    </h3>
+                    <p>
+                        Pasar uno o varios archivos de
+                        <b id="working">working</b> a
+                        <b id="preparacion">preparacion</b> con el siguiente
+                        comando
+                    </p>
+                    <pre><code> git commit -m "mensaje de referencia"</code></pre>
+                </section>
+
+                <section>
+                    <h3>Commit Instantaneo</h3>
+                    <p>
+                        Si quieres que tus archivos no pasen por el area de
+                        <b id="preparacion">preparacion</b> puedes commitearlos
+                        directamente del area de
+                        <b id="working">working</b> hacia
+                        <b id="commited">commited</b>
+                    </p>
+                    <pre><code>git commit -a</code></pre>
+                </section>
+
+                <section>
+                    <h3>
+                        Eliminar un archivo de <b id="commited">commited</b>
+                    </h3>
+                    <p>
+                        tendremos que eliminar primero el archivo en
+                        <b id="working">working</b> luego hacer un add y
+                        enviarlo a <b id="preparacion"> preparacion</b> luego
+                        hacerle un commit para que de esta manera el repositorio
+                        o <b id="commited">commited</b> se le notifique que como
+                        ya no esta en el directorio lo eliminara el tambien.
+                    </p>
+
+                    <ul class="lista">
+                        <hr style="border: 2px solid #525553; margin: 1rem 0" />
+                        <li>
+                            <pre><code>rm archivo.txt</code></pre>
+                        </li>
+                        <hr style="border: 2px solid #525553; margin: 1rem 0" />
+                        <li>
+                            <pre><code>git status</code></pre>
+                            <p>
+                                te saldra que el archivo es
+                                <b id="eliminar">deleted</b>
+                            </p>
+                        </li>
+                        <hr style="border: 2px solid #525553; margin: 1rem 0" />
+                        <li>
+                            <pre><code>git add archivo.txt</code></pre>
+                        </li>
+                        <hr style="border: 2px solid #525553; margin: 1rem 0" />
+                        <li>
+                            <pre><code>git commit -m"Notificando que el archivo se elimino"</code></pre>
+                        </li>
+                        <hr style="border: 2px solid #525553; margin: 1rem 0" />
+                    </ul>
+                </section>
+                
+            </article>
+        </main>
     </body>
 </html>
