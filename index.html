@@ -186,6 +186,68 @@
                         <hr style="border: 2px solid #525553; margin: 1rem 0" />
                     </ul>
                 </section>
+                <section>
+                    <h3>
+                        Recuperar archivo eliminado o midificado de
+                        <b id="working">working</b> del area de
+                        <b id="preparacion">preparacion</b>
+                    </h3>
+                    <p>
+                        si subiste un archivo al area de
+                        <b id="preparacion">preparacion</b> y luego ese mismo
+                        archivo, lo modificas o eliminas de tu directorio o
+                        tambien llamado <b id="working">working</b> lo puedes
+                        recuperar con el siguiente comando
+                    </p>
+                    <pre><code>git restore archivo.txt</code></pre>
+                </section>
+                <section>
+                    <h3>
+                        Volver al ultimo commit que hiciste de un archivo en
+                        <b id="working">working</b>
+                    </h3>
+                    <p>
+                        si subiste un archivo al <b id="commited">commited</b> y
+                        despues hiciste cambios y de los cuales no te gustaron,
+                        puedes volver al tiempo y usar:
+                    </p>
+                    <pre><code>git checkout archivo.txt</code></pre>
+                    <p>
+                        te devuelve el ultimo archivo comiteado que hiciste al
+                        area de <b id="working">working</b> y remplaza ese
+                        archivo modificado
+                    </p>
+                    <h3 id="eliminar">ADVERTENCIA !</h3>
+                    Este comando solo es funcionable cuando no haz hecho un add,
+                    por el contrario si ya subiste ese archivo modificado al
+                    area de <b id="preparacion"> preparacion </b> no te
+                    funcionara, ten lo en cuenta, si en caso lo hiciste quieres
+                    aun asi otra solucion ten en cuenta la siguiente
+                    recomendación de RESET
+                </section>
+                <section>
+                    <h3>
+                        <b style="color: rgb(153, 153, 242)">RESETEAR</b> todo
+                        el proyecto
+                    </h3>
+                    <p>
+                        si por alguna razon haz hecho mal los pasos, y te
+                        gustaria volver al ultimo commit pero como si
+                        literalmente no hubieras hecho nada puedes usar
+                    </p>
+                    <pre><code>git reset --hard</code></pre>
+                    <p>
+                        usalo con cuidado ya que literalmente es como viajar en
+                        el tiempo a tu ultimo commit
+                    </p>
+                </section>
+                <section>
+                    <h3>Cambiar nombre de archivo que esta en <b id="commited">commited</b></h3>
+                <p>si por alguna razon cambiar el nombre de un archivo, coloquemos lo siguiente:</p>
+                <pre><code>git mv archivo.txt nuevoNombre.txt</code></pre>
+                <p>Luego simplemente lo llevamos al area de <b id="preparacion">preparacion</b> y lo comiteamos y automaticamente se cambiara el mismo archivo pero 
+                con otro nombre dentro de <b id="commited">commited</b></p>
+            </section>
             </article>
         </main>
     </body>
