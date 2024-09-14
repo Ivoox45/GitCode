@@ -286,13 +286,141 @@
             <h2>Intermedio de Git</h2>
             <article class="intermedio">
                 <section>
-                    <h3>Identificar Commits de un archivo <b id="commited">commited</b></h3>
-                    <p>Si desea saber las diferencias entre commits que hiciste de un archivo ya sea que hayas hecho 10 commits de ese archivo,
-                        debes de tener en cuenta que cada commit tiene un ID por asi decirlo que se hace asi :
+                    <h3>
+                        Identificar Commits de un archivo
+                        <b id="commited">commited</b>
+                    </h3>
+                    <p>
+                        Si desea saber las diferencias entre commits que hiciste
+                        de un archivo ya sea que hayas hecho 10 commits de ese
+                        archivo, debes de tener en cuenta que cada commit tiene
+                        un ID por asi decirlo que se hace asi :
                     </p>
                     <pre><code>git log</code></pre>
                     <p>para que sea mas simplificado usa</p>
                     <pre><code>git log --oneline</code></pre>
+                </section>
+                <section>
+                    <h3>
+                        Hacer identificadores Pequeños a los
+                        <b id="commited">commited</b>
+                    </h3>
+                    <p>
+                        existe una probabilidad de que las id de los commits que
+                        se crean, puedan ser iguales por lo cual es mejor tener
+                        un numero de caracteres fijo dependiendo de que tan
+                        grande vayas a hacer un proyecto con commits
+                    </p>
+                    <pre><code>git config --global core.abbrev 5</code></pre>
+                    <p>
+                        en este caso el numero que puse "5" puede variar
+                        dependiendo de cuantos commits hagas y del proyecto,
+                        mientras mas grande sea mejor seria colocarle un numero
+                        mas grande
+                    </p>
+                </section>
+                <section>
+                    <h3>Comparar entre dos <b id="commited">commited</b></h3>
+                    <p>
+                        Una vez ya sabido los dos pasos anteriores, ahora si
+                        podemos comparar dos commits, para que por asi decirlo
+                        ver que cambiamos de un archivo de un antes y despues de
+                        los commits que hayamos hecho, ayudandonos con los
+                        identificadores
+                    </p>
+
+                    <pre><code>git diff 4427b 9ccc3</code></pre>
+                    <p>
+                        los numeros son referenciales, independientemente de los
+                        id que tengas de los commits que hayas hecho
+                    </p>
+                </section>
+                <section>
+                    <h3>Otras cosas de DIFF</h3>
+                    <p>puedes ver directamente que archivos cambiaron con:</p>
+                    <pre><code>git diff --name-only 4427b 9ccc3</code></pre>
+                    <p>si quieres ver a nivel lineas que cambio puedes usar</p>
+                    <pre><code>git diff --word-diff 4427b 9ccc3</code></pre>
+                </section>
+                <section>
+                    <h3>Modificar Commit</h3>
+                    <p>
+                        En si no se puede modificar un commit pero si se puede
+                        remplazar.
+                    </p>
+                    <pre><code>git commit --amend</code></pre>
+                    <p>
+                        lo que hace es cargar el ultimo commit y te permite
+                        cambiar la descripcion del commit, ahora digamos que
+                        quieres subir un archivo y modificar archivos de ese
+                        commit que decidiste modificar, lo que debes hacer es
+                        antes de hacer git commit --amendl, subirlo al area de
+                        <b id="preparacion">preparacion</b> y ya luego ahi
+                        recien subirlo con el codigo que proporcione primero.
+                    </p>
+                </section>
+            </article>
+            <h2>Que es HEAD?</h2>
+            <article class="head-explication">
+                <section>
+                    <p>Te preguntas que es eso de HEAD? cuando haces un</p>
+                    <pre><code>git log</code></pre>
+                    <p>
+                        pues bueno para que entiendas como funciona te lo
+                        describo con la siguiente secuencia
+                    </p>
+                    <div class="head--dibujo">
+                        <div>A</div>
+                        <div></div>
+                        <div>B</div>
+                        <div></div>
+                        <div>C</div>
+                        <div></div>
+                        <div>D</div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <p>
+                        El ultimoque es head es el ultimo commit que hemos hecho
+                        si es la primera vezq ue hacemos un commit pues solo
+                        habra un circulito que serai a, si hacemos otro commit
+                        tendremos 2 circulitos , si hacemos 3 .... y asi
+                        sucesivamente y HEAD siempre va a estar siempre al
+                        ultimo
+                    </p>
+                    <h3>ACLARACION DE MODIFICAR LOS COMMITS</h3>
+                    <p>
+                        Cuando intentes hacer una modificacion de commit con
+                        ammend, recuerda no es como que entramos a ese commit y
+                        modificamos literalmente, sino que agarramos el commit
+                        lo modificamos y es remplazado como el nuevo ultimo
+                        commit y ya no el que teniamos antes , es decir si por
+                        ejemplo el utlimo commit que hicimos en E como en la
+                        imagen de los circulos, entonces digamos que quiero
+                        modificar algo, lo hago con amend entonces ese E sera
+                        remplazado por otro E y el anterior E sera eliminado,
+                        por lo tanto tambien cambiara su ID
+                    </p>
+
+                    <p>
+                        Ahora si quisieras hacer una "MODIFICACION" de otros
+                        commits atras, ya no te lo recomiendo ya que es un
+                        proceso mas compliado, lo normal es asegurarte de que
+                        haces los commits bien y que si fallas solo sea en el
+                        ultimo commit ya que es mas viable que modificar otros
+                        commits anteriores. Si deseas saber como modificar te
+                        sugiero ver un tutorial
+                    </p>
+                </section>
+            </article>
+            <h2>Intermedio de Git</h2>
+            <article>
+                <section>
+                    <h3>Deshacer un <b id="commited">commit</b></h3>
+                    <p>La primera forma es ubicando el head dentro de nuestros commit y yengo a su ID</p>
+                    <pre><code>git reset --soft 45a55</code></pre>
+                    <pre><code>git reset --soft head~2</code></pre>
+                    <p>de esta manera </p>
                 </section>
             </article>
         </main>

@@ -310,3 +310,59 @@ pre {
 .lista > li {
     margin: 1rem;
 }
+
+/* HEAD EJEMPLO */
+
+.head-explication {
+    grid-template-columns: 1fr;
+}
+.head-explication > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.head--dibujo {
+    display: flex;
+    gap: 5px;
+}
+.head--dibujo > div {
+    color: #000;
+    text-align: center;
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid #000;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.head--dibujo > div:nth-child(2n) {
+    width: 50px;
+    height: 0.5px;
+    border-radius: 0px;
+    align-self: center;
+    border: 2px solid #ffffff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+.head--dibujo > div:last-child {
+    background-color: #38ade8;
+}
+.head--dibujo > div:last-child::before {
+    content: "HEAD -> (MASTER)";
+    font-size: small;
+}
+
+.head--dibujo > div:nth-child(odd):hover {
+    transform: translateY(-10px);
+}
