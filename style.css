@@ -274,8 +274,9 @@ section {
     -ms-transition: transform 0.3s ease;
     -o-transition: transform 0.3s ease;
 }
-section:nth-child(7),
-section:nth-child(9) {
+.basico > :nth-child(7),
+section:nth-child(9),
+section:nth-child(11) {
     grid-row: span 2;
 }
 section:hover {

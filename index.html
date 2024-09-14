@@ -57,7 +57,7 @@
                 <div class="repositorio"><h3>COMMITED/REPOSITORIO</h3></div>
             </div>
             <h2>Basico de Git</h2>
-            <article>
+            <article class="basico">
                 <section>
                     <h3>Iniciar un proyecto</h3>
                     <p>
@@ -106,7 +106,6 @@
                     </p>
                     <pre><code> git status </code></pre>
                 </section>
-
                 <section>
                     <h3>
                         <b id="eliminar">Quitar </b>archivos de
@@ -242,12 +241,59 @@
                     </p>
                 </section>
                 <section>
-                    <h3>Cambiar nombre de archivo que esta en <b id="commited">commited</b></h3>
-                <p>si por alguna razon cambiar el nombre de un archivo, coloquemos lo siguiente:</p>
-                <pre><code>git mv archivo.txt nuevoNombre.txt</code></pre>
-                <p>Luego simplemente lo llevamos al area de <b id="preparacion">preparacion</b> y lo comiteamos y automaticamente se cambiara el mismo archivo pero 
-                con otro nombre dentro de <b id="commited">commited</b></p>
-            </section>
+                    <h3>
+                        Cambiar nombre de archivo que esta en
+                        <b id="commited">commited</b>
+                    </h3>
+                    <p>
+                        si por alguna razon cambiar el nombre de un archivo,
+                        coloquemos lo siguiente:
+                    </p>
+                    <pre><code>git mv archivo.txt nuevoNombre.txt</code></pre>
+                    <p>
+                        Luego simplemente lo llevamos al area de
+                        <b id="preparacion">preparacion</b> y lo comiteamos y
+                        automaticamente se cambiara el mismo archivo pero con
+                        otro nombre dentro de <b id="commited">commited</b>
+                    </p>
+                </section>
+                <section>
+                    <h3>
+                        Visualizar archivos del area de
+                        <b id="commited">commited</b>
+                    </h3>
+                    <p>
+                        te permite ver en la terminal de git el documento que
+                        hiciste ultimo commit
+                    </p>
+                    <pre><code>git show archivo.txt</code></pre>
+                </section>
+                <section>
+                    <h3>
+                        Ver diferencia entre el area de
+                        <b id="preparacion">preparacion</b> y
+                        <b id="commited">commited</b>
+                    </h3>
+                    <p>
+                        Muchas veces queremos ver que tenemos en el area de
+                        <b id="preparacion">preparacion</b> y
+                        <b id="commited">commited</b> y verlas al mismo tiempo
+                        para ver que diferencias tienen para ese utiliza
+                    </p>
+                    <pre><code>git diff --staged </code></pre>
+                </section>
+            </article>
+            <h2>Intermedio de Git</h2>
+            <article class="intermedio">
+                <section>
+                    <h3>Identificar Commits de un archivo <b id="commited">commited</b></h3>
+                    <p>Si desea saber las diferencias entre commits que hiciste de un archivo ya sea que hayas hecho 10 commits de ese archivo,
+                        debes de tener en cuenta que cada commit tiene un ID por asi decirlo que se hace asi :
+                    </p>
+                    <pre><code>git log</code></pre>
+                    <p>para que sea mas simplificado usa</p>
+                    <pre><code>git log --oneline</code></pre>
+                </section>
             </article>
         </main>
     </body>
