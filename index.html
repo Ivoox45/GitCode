@@ -36,7 +36,7 @@
 
                     <a href="#">Inicio</a>
                     <a href="#">Basico</a>
-                    <a href="#">Intermedio</a>
+                    <a href="#inter">Intermedio</a>
                 </nav>
             </div>
             <div class="container--desktop">
@@ -44,7 +44,7 @@
                 <nav class="navbar--desktop">
                     <a href="#">Inicio</a>
                     <a href="#">Basico</a>
-                    <a href="#">Intermedio</a>
+                    <a href="#inter">Intermedio</a>
                 </nav>
             </div>
         </header>
@@ -283,7 +283,7 @@
                     <pre><code>git diff --staged </code></pre>
                 </section>
             </article>
-            <h2>Intermedio de Git</h2>
+            <h2 id="inter">Intermedio de Git</h2>
             <article class="intermedio">
                 <section>
                     <h3>
@@ -417,10 +417,219 @@
             <article>
                 <section>
                     <h3>Deshacer un <b id="commited">commit</b></h3>
-                    <p>La primera forma es ubicando el head dentro de nuestros commit y yengo a su ID</p>
+                    <p>
+                        La primera forma es ubicando el head dentro de nuestros
+                        commit y yengo a su ID
+                    </p>
                     <pre><code>git reset --soft 45a55</code></pre>
                     <pre><code>git reset --soft head~2</code></pre>
-                    <p>de esta manera </p>
+                    <p>de esta manera</p>
+                </section>
+                <section>
+                    <h3>Deshacer un <b id="commited">commit </b>parte 2</h3>
+                    <p>
+                        Otra forma de deshacer un commit es usando mixed, lo que
+                        hace es eliminar tanto el commit que tu hiciste anterior
+                        al que hayas seleccionado como ejepmplo 549a6 y el area
+                        de <b id="preparacion">Staging</b>
+                    </p>
+                    <pre><code>git reset --mixed 549a6</code></pre>
+                </section>
+                <section>
+                    <h3>Deshacer un <b id="commited">commit </b>parte 3</h3>
+                    <p>
+                        Eliminas tanto el area de
+                        <b id="preparacion">Staging</b>, el area de
+                        <b id="working">working</b> y el commit anterior al que
+                        escogiste, pero si elijes el ultimo commit que hiciste
+                        elimina los el area de <b id="preparacion">Staging</b>,
+                        el area de <b id="working">working</b> pero no el commit
+                        y en ambos casos , te duvuelve el commit que escogiste
+                        al area de <b id="working">working</b>
+                    </p>
+                    <pre><code>git reset --hard 549a6</code></pre>
+                </section>
+            </article>
+            <h2>Que son las Ramas/Branches?</h2>
+            <article class="head-explication">
+                <section>
+                    <p>
+                        Para que tengas una idea mas clara de lo que es una rama
+                        basta con enseñarte denuevo esta imagen referencial
+                    </p>
+                    <div class="head--dibujo">
+                        <div>A</div>
+                        <div></div>
+                        <div>B</div>
+                        <div></div>
+                        <div>C</div>
+                        <div></div>
+                        <div>D</div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <p>
+                        como ves este sigue una secuencia lineal de muchos
+                        commits por lo cual, nosotros al momento de hacer una
+                        rama, hacemos una version de prueba temporal la cual si
+                        resulta bien la podemos agregar a la linea original, es
+                        decir es como hacer algo que quieres agregar al
+                        proyecto, ya sea alguna nueva modfiicacion o arreglar un
+                        bug o agregar una nueva funcionaliad pero sin que afecte
+                        al proyecto original entonces creas una copia en el cual
+                        puedes hacer esos cambios y si resulta como quieres lo
+                        agregas, si no, pues lo eliminas o lo dejas en pausa,
+                        ejemplo:
+                    </p>
+                    <div class="rama--dibujo">
+                        <div>A</div>
+                        <div>B</div>
+                        <div>HEAD -> (MASTER) C</div>
+                        <div>V1. C</div>
+                        <div>V2. C</div>
+                        <div>V3. C</div>
+                    </div>
+                </section>
+            </article>
+            <article>
+                <section>
+                    <h3>Como ver mis ramas</h3>
+                    <p>Para poder ver tus ramas utiliza el siguiente codigo</p>
+                    <pre><code>git branch</code></pre>
+                    <br />
+                    <h3>Como creo una rama?</h3>
+                    <p>Para crear una rama utiliza el siguiente codigo</p>
+                    <pre><code>git branch rama-nueva</code></pre>
+                    <p>
+                        en el que dice "rama-nueva" va el nombre que quieras
+                        asignarle a tu rama, peude ser cualquiera, pero eso si
+                        no puede tenre espacios, puedes utilizar CapitalCase,
+                        guiones o estos "_".
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Como me muevo entre las ramas?</h3>
+                    <p>
+                        Para moverte entre tus ramas hay dos formas, la antigua
+                        y moderna por asi decirlo
+                    </p>
+                    <h4>Forma Antigua</h4>
+                    <pre><code>git checkout rama-nueva</code></pre>
+                    <h4>Forma Moderna</h4>
+                    <pre><code>git switch rama-nueva</code></pre>
+                    <p>
+                        cual es la diferencia? git switch es la mas usada y mas
+                        recomendada para moverse entre ramas, mientras que el
+                        checkout hace lo mismo pero no es recomendable usarlo
+                        porque sirve para otras cosas, switch es mas
+                        especificamente para moverte entre ramas
+                    </p>
+                </section>
+                <section>
+                    <h3>Crear y moverse al mismo timepo a una rama</h3>
+                    <p>
+                        normalmente nosotros por tiempo queremos crear una rama
+                        y que una vez creado ya estemos directamente en esa rama
+                        sin necesidad de estar colocando otro codigo para
+                        movernos
+                    </p>
+                    <pre><code>git switch -c rama-nueva2</code></pre>
+                    <p>
+                        este crea una rama dependiendo donde estes, por ejemplo
+                        estas en la rama del main, entonces si aplicas este
+                        codigo, crearas una rama de la rama
+                    </p>
+                </section>
+                <section>
+                    <h3>Eliminar una Rama</h3>
+                    <p>
+                        antes de eliminar una rama debes de salir de esa rama
+                        sino habra problemas
+                    </p>
+                    <pre><code>git branch -d rama-nueva2</code></pre>
+                    <br />
+                    <h3>Modificar nombre de rama</h3>
+                    <h4>Primera forma</h4>
+                    <pre><code>git branch -m rama-nueva2 rama-nueva2Modificada</code></pre>
+                    <p>
+                        Solo se hace si estamos en una rama distinta a la que
+                        queremos cambiar
+                    </p>
+                    <h4>Segunda Forma</h4>
+                    <pre><code>git branch -m cambiar-nombre</code></pre>
+                    <p>
+                        esta funciona directamente si quieres cambiar el nombre
+                        en la rama que estes actualmente, solo colocas el nuevo
+                        nombre de la rama que estes
+                    </p>
+                </section>
+            </article>
+            <h2>Fusionar Ramas/Branches</h2>
+            <article>
+                <section>
+                    <h3>Unir una rama a la Main</h3>
+                    <p>
+                        digamos que hicistes tus cambios en la rama que creaste
+                        de la version original, como hago apra agregar esos
+                        cambios al main? lo primero que debes hacer es moverte a
+                        la rama donde quieres que ocurran esos cambios osea a la
+                        rama main, una vez hay ejecuta el siguiente codigo
+                    </p>
+                    <pre><code> git merge rama-nueva</code></pre>
+                    <p>
+                        de esta manera integras, la rama-nueva al main y
+                        lograras ver los cambios
+                    </p>
+                </section>
+                <section>
+                    <h3>Y si me equivoque en funcionar?</h3>
+                    <p>
+                        digamos que fucionaste dos rama de las cuales te
+                        equivocaste y no querias fucionar, hay una solucion:
+                    </p>
+                    <pre><code>git reset --hard 78817h</code></pre>
+                    <p>
+                        se coloca el ID del commit de la rama que no estaba
+                        fucionada, es decir la version anterior antes de que se
+                        fusionase, porl ocual cuando lo ejecutas el codigo
+                        eliminas la fusion y regresas al estado anterior y sin
+                        perder ninguna rama ni nada
+                    </p>
+                </section>
+            </article>
+            <h2>Merge Conflicts, .gitignore, reflog</h2>
+            <article>
+                <section>
+                    <h3>Merge Conflicts</h3>
+                    es un tema muy complejo pero a medida que lo vas
+                    entendiendo, te resultara facil, no puedo explicartelo aqui
+                    porque es un tema que me costaria mucho explicar, por lo
+                    cual te recomendaria mirar videos de yoututbe o algo por el
+                    estilo.
+                    <br />
+                    <br />
+                    Ahora para que tengas una idea mas clara de que es y
+                    masomenos tengas una idea, tomalo como si estuvieras
+                    haceindo una rama y quieres ahcer cambios a la principal
+                    osea al main y lo quieres incluir, literalmente es el mismo
+                    paso solo que en este caso, en el main digamos que decidiste
+                    hacer un otro commit el cual es otro cambio y leugo quieres
+                    hacer la fusion, entonces es aqui de como surge el merge.
+                </section>
+                <section>
+                    <h3>.gitignore</h3>
+                    <p>
+                        es crear un archivo con un nombre asi literalmente
+                        ".gitignore", y de hay colocar el nombre exacto de todos
+                        los archivos que no quieres que se suban una vez hagas
+                        commit como ejemplo:
+                        "archivo.txt","*.txt","!readme.txt", el * elimina todos
+                        los que tengan algo y un punto txt, el ! hace que no
+                        elimines ese archivo en especifico.
+                    </p>
+                    <h3>reflog</h3>
+                    <p>Te ayuda aver todos los moviminentos de tu HEAD, tambien viendo los identificadores de cada uno, por lo cual si es que quisieras regresar a un commit que hayas eliminado y quieres regresar a ese, puedes hacerlo, se me olvido decirte que nunca se elimina un commit solo se desconecta del flujo principal </p>
                 </section>
             </article>
         </main>
